@@ -54,7 +54,7 @@ git clone https://github.com/Donaldttt/fuzzyy ~/.vim/pack/Donaldttt/start/fuzzyy
 | FuzzyGrep \<str>      | search for string in CWD, use \<str> if provided      | \<leader>fg     |
 | FuzzyMru              | search most recent used files                         | \<leader>fm     |
 | FuzzyMruCwd           | search most recent used files in CWD                  | \<leader>fr     |
-| FuzzyInBuffer \<str>  | search for string in buffer, use \<str> if provided   | \<leader>fi     |
+| FuzzySearch \<str>    | search for string in buffer, use \<str> if provided   | \<leader>fs     |
 | FuzzyHelp             | search subjects/tags in :help documents               | \<leader>fh     |
 | FuzzyCommands         | search commands                                       | \<leader>fc     |
 | FuzzyColors           | search installed color schemes                        | None    |
@@ -62,6 +62,7 @@ git clone https://github.com/Donaldttt/fuzzyy ~/.vim/pack/Donaldttt/start/fuzzyy
 | FuzzyHighlights       | search highlight groups                               | None    |
 | FuzzyGitFiles         | search files in output from `git ls-files`            | None    |
 | FuzzyHelps            | deprecated alias for FuzzyHelp, will be removed       | None    |
+| FuzzyInBuffer         | deprecated alias for FuzzySearch, will be removed     | None    |
 | FuzzyMRUFiles         | deprecated alias for FuzzyMru, will be removed        | None    |
 
 - For FuzzyGrep and FuzzyInBuffer, you can define a keymap like this to search the

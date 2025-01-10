@@ -74,7 +74,7 @@ var windows: dict<any> = {
     help: {
         preview_ratio: 0.6,
     },
-    inbuffer: {},
+    search: {},
 }
 if exists('g:fuzzyy_window_layout') && type(g:fuzzyy_window_layout) == v:t_dict
     for [key, value] in items(windows)
@@ -95,7 +95,7 @@ import autoload '../autoload/fuzzyy/grep.vim'
 import autoload '../autoload/fuzzyy/files.vim'
 import autoload '../autoload/fuzzyy/help.vim'
 import autoload '../autoload/fuzzyy/colors.vim'
-import autoload '../autoload/fuzzyy/inbuffer.vim'
+import autoload '../autoload/fuzzyy/search.vim'
 import autoload '../autoload/fuzzyy/buffers.vim'
 import autoload '../autoload/fuzzyy/highlights.vim'
 import autoload '../autoload/fuzzyy/cmdhistory.vim'
@@ -105,7 +105,7 @@ command! -nargs=? FuzzyGrep grep.Start(extend(windows.grep, { 'search': <q-args>
 command! -nargs=0 FuzzyFiles files.Start(windows.files)
 command! -nargs=0 FuzzyHelp help.Start(windows.help)
 command! -nargs=0 FuzzyColors colors.Start(windows.colors)
-command! -nargs=? FuzzyInBuffer inbuffer.Start(extend(windows.inbuffer, { 'search': <q-args> }))
+command! -nargs=? FuzzySearch search.Start(extend(windows.search, { 'search': <q-args> }))
 command! -nargs=0 FuzzyCommands commands.Start(windows.commands)
 command! -nargs=0 FuzzyBuffers buffers.Start(windows.buffers)
 command! -nargs=0 FuzzyHighlights highlights.Start(windows.highlights)
@@ -116,6 +116,7 @@ command! -nargs=0 FuzzyMruCwd mru.Start(extend(windows.mru, { 'cwd': getcwd() })
 
 # Deprecated/renamed commands
 command! -nargs=0 FuzzyHelps echo 'fuzzyy: FuzzyHelps command is deprecated, use FuzzyHelp instead' | FuzzyHelp
+command! -nargs=0 FuzzyInBuffer echo 'fuzzyy: FuzzyInBuffer command is deprecated, use FuzzySearch instead' | FuzzySearch
 command! -nargs=0 FuzzyMRUFiles echo 'fuzzyy: FuzzyMRUFiles command is deprecated, use FuzzyMru instead' | FuzzyMru
 
 # Hack to only show a single line warning when startng the selector
